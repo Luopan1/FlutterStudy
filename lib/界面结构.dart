@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nihao_flutter/demo/list_demo.dart';
 import 'package:nihao_flutter/demo/drawer.dart';
+import 'package:nihao_flutter/demo/basic_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -61,11 +62,12 @@ class Home extends StatelessWidget {
         ),
         body: TabBarView(children: [
           List_Demo(),
-          Icon(
-            Icons.history,
-            size: 128.0,
-            color: Colors.black12,
-          ),
+//          Icon(
+//            Icons.history,
+//            size: 128.0,
+//            color: Colors.black12,
+//          ),
+          BasicDemo(),
           Icon(
             Icons.directions_bike,
             size: 128.0,
