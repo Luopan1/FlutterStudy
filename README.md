@@ -16,7 +16,7 @@
       home: Home(), //设置主页面
     ```
 3. 在Home类中写主页面视图 ，大多继承自stateless,在返回时返回Scaffold(),Scaffold()中能配置appbar，body等
-![FlutterStudy/resource/6127b2a0cb86ed634f1697246f1492bf.png](evernotecid://854EBC5B-93A9-4D65-A794-DB813A97668F/appyinxiangcom/22667938/ENResource/p4)
+![1](/resource/6127b2a0cb86ed634f1697246f1492bf.png)
 
 
 ##### 使用抽屉drawer
