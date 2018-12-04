@@ -16,7 +16,7 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-#### flutter开发 使用google材质主题
+#### flutter开发 使用google MaterialApp主题
 
 1.  runAPP()中填写主视图类
     ```
