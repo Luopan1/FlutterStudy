@@ -8,6 +8,7 @@ class List_Demo extends StatelessWidget {
       color: Colors.white,
       margin: EdgeInsets.all(8.0),//上下左右为8间距
       child: new Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Image.network(posts[index].imageUrl),
           SizedBox(height: 16.0,),//图片下面留间距

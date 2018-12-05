@@ -3,6 +3,8 @@ import 'package:nihao_flutter/demo/list_demo.dart';
 import 'package:nihao_flutter/demo/drawer.dart';
 import 'package:nihao_flutter/demo/basic_demo.dart';
 import 'package:nihao_flutter/demo/layout_demo.dart';
+import 'package:nihao_flutter/demo/view_demo.dart';
+import 'package:nihao_flutter/demo/sliver_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.yellow, //只有在MaterApp中配置主题
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
           splashColor: Colors.white70),
-      home: Home(), //设置主页面
+      home: SliverDemo(), //设置主页面
     );
   }
 }
@@ -27,7 +29,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
+        length: 4,
         child: new Scaffold(
           //主视图 主要是提供appbar的配置  body的配置
           backgroundColor: Colors.grey[100],
@@ -58,12 +60,15 @@ class Home extends StatelessWidget {
                   Tab(icon: Icon(Icons.local_florist)),
                   Tab(icon: Icon(Icons.history)),
                   Tab(icon: Icon(Icons.directions_bike)),
+                  Tab(icon: Icon(Icons.view_quilt)),
+
                 ]),
           ),
           body: TabBarView(children: [
             List_Demo(),
             Container_Demo(),
             LayoutDemo(),
+            SliverDemo(),
           ]),
           drawer: Drawer_Demo(),
           bottomNavigationBar: BootomNavicationBar(),
