@@ -83,7 +83,7 @@ class Container_Demo extends StatelessWidget {
                 width: 5.0,
                 style: BorderStyle.solid,
               ))     */
-                border: Border.all(color: Colors.indigoAccent[100], width: 5.0),
+                border: Border.all(color: Colors.orange, width: 5.0),
                 //同时设置多个边框
 //            borderRadius: BorderRadius.circular(16),//圆角盒子不能使用 shape: BoxShape.circle 的圆角效果
 //            borderRadius: BorderRadius.only(
