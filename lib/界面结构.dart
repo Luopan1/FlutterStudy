@@ -3,9 +3,10 @@ import 'package:nihao_flutter/demo/list_demo.dart';
 import 'package:nihao_flutter/demo/drawer.dart';
 import 'package:nihao_flutter/demo/basic_demo.dart';
 import 'package:nihao_flutter/demo/layout_demo.dart';
+import 'package:nihao_flutter/demo/list_info.dart';
 import 'package:nihao_flutter/demo/view_demo.dart';
 import 'package:nihao_flutter/demo/sliver_demo.dart';
-
+import './demo/navigator_demo.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -16,11 +17,23 @@ class MyApp extends StatelessWidget {
       //使用google的材质主题  title显示在app为卡片式后台时显示
       debugShowCheckedModeBanner: false, //有上角的debug的显示
       title: 'Flutter Demo',
+      initialRoute: "/",
+      routes: {
+        "/":(context){
+              return NavigatorDemo();
+           },
+        '/about': (context) {
+            return AboutPage(title: 'About1');
+        } ,
+        '/home':(context){
+          return Home();
+        },
+      },
       theme: ThemeData(
           primarySwatch: Colors.yellow, //只有在MaterApp中配置主题
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
           splashColor: Colors.white70),
-      home: SliverDemo(), //设置主页面
+      // home: NavigatorDemo(), //设置主页面
     );
   }
 }

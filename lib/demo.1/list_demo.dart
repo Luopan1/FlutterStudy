@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nihao_flutter/demo/list_info.dart';
 import 'package:nihao_flutter/model/post.dart';
 
 class List_Demo extends StatelessWidget {
@@ -8,15 +7,10 @@ class List_Demo extends StatelessWidget {
     return Container(
       color: Colors.white,
       margin: EdgeInsets.all(8.0),//上下左右为8间距
-      child: Stack(
-        children: <Widget>[
-           Column(
+      child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-            AspectRatio(
-              aspectRatio: 16/9,
-              child: Image.network(posts[index].imageUrl,fit: BoxFit.cover,),
-            ),
+          Image.network(posts[index].imageUrl),
           SizedBox(height: 16.0,),//图片下面留间距
           Text(posts[index].title,style:Theme.of(context).textTheme.title),
           SizedBox(height: 8.0,),
@@ -24,24 +18,6 @@ class List_Demo extends StatelessWidget {
           SizedBox(height: 8.0,)
         ],
       ),
-      Positioned.fill(//增加点按水波纹效果
-          child: Material(
-            color: Colors.transparent,
-            child: InkWell(
-              splashColor: Colors.white.withOpacity(0.3),
-              highlightColor: Colors.white.withOpacity(0.1),
-              onTap: (){
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context){
-                    return ListInfo(post: posts[index],);
-                  })
-                );
-              },
-            ),
-          ),
-      )
-        ],
-      )
     );
   }
 
