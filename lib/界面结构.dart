@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nihao_flutter/demo/form_demo.dart';
 import 'package:nihao_flutter/demo/list_demo.dart';
 import 'package:nihao_flutter/demo/drawer.dart';
 import 'package:nihao_flutter/demo/basic_demo.dart';
@@ -7,6 +8,8 @@ import 'package:nihao_flutter/demo/list_info.dart';
 import 'package:nihao_flutter/demo/view_demo.dart';
 import 'package:nihao_flutter/demo/sliver_demo.dart';
 import './demo/navigator_demo.dart';
+import './demo/material_components.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -15,24 +18,34 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       //使用google的材质主题  title显示在app为卡片式后台时显示
-      debugShowCheckedModeBanner: false, //有上角的debug的显示
+      debugShowCheckedModeBanner: false,
+      //有上角的debug的显示
       title: 'Flutter Demo',
-      initialRoute: "/",
+      initialRoute: "/mdc",
       routes: {
-        "/":(context){
-              return NavigatorDemo();
-           },
+        "/home": (context) {
+          return NavigatorDemo();
+        },
         '/about': (context) {
-            return AboutPage(title: 'About1');
-        } ,
-        '/home':(context){
+          return AboutPage(title: 'About1');
+        },
+        '/': (context) {
           return Home();
         },
+        '/form': (context) {
+          return FormDemo();
+        },
+        '/mdc':(context){
+          return MaterialComponents();
+        }
       },
       theme: ThemeData(
-          primarySwatch: Colors.yellow, //只有在MaterApp中配置主题
-          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-          splashColor: Colors.white70),
+        primarySwatch: Colors.yellow, //只有在MaterApp中配置主题
+        highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+        splashColor: Colors.white70,
+        accentColor: Colors.blue,
+      ),
+
       // home: NavigatorDemo(), //设置主页面
     );
   }
@@ -74,15 +87,19 @@ class Home extends StatelessWidget {
                   Tab(icon: Icon(Icons.history)),
                   Tab(icon: Icon(Icons.directions_bike)),
                   Tab(icon: Icon(Icons.view_quilt)),
-
                 ]),
           ),
-          body: TabBarView(children: [
-            List_Demo(),
-            Container_Demo(),
-            LayoutDemo(),
-            SliverDemo(),
-          ]),
+          body: Stack(
+            children: <Widget>[
+              TabBarView(children: [
+                List_Demo(),
+                Container_Demo(),
+                LayoutDemo(),
+                SliverDemo(),
+              ],),
+
+            ],
+          ),
           drawer: Drawer_Demo(),
           bottomNavigationBar: BootomNavicationBar(),
         ));

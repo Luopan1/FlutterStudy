@@ -9,6 +9,7 @@ class SliverDemo extends StatelessWidget {
         scrollDirection: Axis.vertical,
         slivers: <Widget>[
           SliverAppBar(
+            leading: new Center(child: null,),
 //            title: Text("NIHAO"),
 //            pinned: true,//国定在顶部
             floating: true,//悬浮在顶部  可以顶出布局 下拉可以慢慢拉出来

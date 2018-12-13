@@ -24,7 +24,7 @@ class List_Demo extends StatelessWidget {
           SizedBox(height: 8.0,)
         ],
       ),
-      Positioned.fill(//增加点按水波纹效果
+      Positioned.fill(//增加点.水波纹效果
           child: Material(
             color: Colors.transparent,
             child: InkWell(
